@@ -1,0 +1,126 @@
+<html>
+<head>
+  <title>Guess the Country</title>
+  <script>
+  var score = 0;
+  var count = 0;
+  var table = " ";
+  function nextP()
+  {
+    var answer = document.getElementById("input").value;
+    if (count == 0){
+        if (answer == "Belau"){
+             score = score + 1
+           }
+          table = table + "1. The answer is Belau. You put: " + answer + "<br>";
+          document.getElementById("pic").innerHTML = "<img src = 'burkina05.gif' height=350px width=400px>";
+      }
+      if (count == 1){
+          if (answer == "Burkina"){
+               score = score + 1;
+             }
+            table = table + "2. The answer is Burkina. You put: " + answer + "<br>";
+            document.getElementById("pic").innerHTML = "<img src = 'ouganda42.gif' height=350px width=400px>";
+        }
+        if (count == 2){
+            if (answer == "Uganda"){
+                 score = score + 1;
+               }
+              table = table + "3. The answer is Uganda. You put: " + answer + "<br>";
+              document.getElementById("pic").innerHTML = "<img src = 'timor50.gif' height=350px width=400px>";
+          }
+          if (count == 3){
+              if (answer == "Timor"){
+                   score = score + 1;
+                 }
+                table = table + "4. The answer is Timor. You put: " + answer + "<br>";
+                document.getElementById("pic").innerHTML = "<img src = 'USA.jpg' height=350px width=500px>";
+            }
+            if (count == 4){
+                if (answer == "United States"){
+                     score = score + 1;
+                   }
+                  table = table + "5. The answer is United States. You put: " + answer + "<br>";
+                  document.getElementById("pic").innerHTML = table + "<br>" + "Your score is: " + score + "/5";
+                  document.getElementById("reset").style.visibility = "visible";
+                  document.getElementById("button").style.visibility = "hidden";
+                  document.getElementById("input").style.visibility = "hidden";
+              }
+      count = count + 1;
+   }
+  function reset(){
+    table = " ";
+    score = 0;
+    count = 0;
+    document.getElementById("pic").innerHTML = "<img src='belau02.gif' height=400px width=300px>"
+    document.getElementById("reset").style.visibility = "hidden";
+    document.getElementById("button").style.visibility = "visible";
+    document.getElementById("input").style.visibility = "visible";
+  }
+  </script>
+  <style>
+  body{
+    background-image: url(world.jpg);
+    color: white;
+    font-family: fantasy;
+    font-size: 35px;
+  }
+  h2{
+    font-family: fantasy;
+    font-size: 35px;
+    color: white;
+  }
+  #input{
+    border-color: #008ae6;
+    background-color: #0d0d26;
+    color: white;
+    font-family: fantasy;
+    border-radius: 10px;
+  }
+  #button{
+    border-color: #008ae6;
+    background-color: #0d0d26;
+    color: white;
+    font-family: fantasy;
+    border-radius: 10px;
+  }
+  #reset{
+    border-color: #008ae6;
+    background-color: #0d0d26;
+    color: white;
+    font-family: fantasy;
+    border-radius: 10px;
+  }
+  #button:hover{
+    border-color: #0d0d26;
+    background-color: #008ae6;
+    color: white;
+    font-family: fantasy;
+  }
+  #reset:hover{
+    border-color: #0d0d26;
+    background-color: #008ae6;
+    color: white;
+    font-family: fantasy;
+  }
+  #input:hover{
+    border-color: #0d0d26;
+    background-color: #008ae6;
+    color: white;
+    font-family: fantasy;
+  }
+  </style>
+</head>
+<body onload = "reset()">
+  <center>
+  <h1>Guess the Country</h1>
+  <span id="pic"><img src="belau02.gif" height=400px width=300px></span>
+  <br>
+  <input type="text" id="input">
+  <input type="button" value="Next Picture" onclick="nextP()" id="button">
+  <input type="button" value="Play Again" onclick="reset()" id="reset">
+  <br>
+  <span id="table"></span>
+  <center>
+</body>
+</html>
